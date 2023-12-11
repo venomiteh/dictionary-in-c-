@@ -62,7 +62,7 @@ while (getline(synonymStream,word,':')){
     strcpy(synonym->data,word.c_str());//$$
     synonym->next=newWord->synonym;
     newWord->synonym=synonym;
-}
+
 
 
     }
@@ -89,7 +89,7 @@ else{
 inputFile.close();
 return dict;
 
- 
+ }
 
 }
 // function to display the dictionary
@@ -101,7 +101,7 @@ while (currWord!=nullptr)
     sWord* currSynonym = currWord->synonym;
     if (currSynonym != nullptr)
     {
-      cout<<"synonyms";
+      cout<<"synonyms: ";
 while (currSynonym != nullptr)
 {
    cout<<currSynonym->data << " ";
@@ -113,7 +113,7 @@ cout<<endl;
     sWord*currAntonym = currWord->antonym;
     if (currAntonym != nullptr)
     {
-        cout<<"Antonyms:";
+        cout<<"Antonyms: ";
         while (currAntonym != nullptr)
         {
             cout<<currAntonym->data << " ";
